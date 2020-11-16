@@ -10,8 +10,10 @@ public class 插入 {
         int[] a = {2, 3, 57, 7, 1};
         insertionSort(a);
     }
+
     /**
      * 插入排序
+     *
      * @param array
      * @return
      */

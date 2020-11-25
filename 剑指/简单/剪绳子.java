@@ -31,8 +31,8 @@ public class 剪绳子 {
     public static int cuttingRope2(int n) {
         if (n < 2)
             return 0;
-//        if (n == 2)
-//            return 1;
+        if (n == 2)
+            return 1;
         int res = 0;
         for (int i = 2; i < n; i++) {
             res = Math.max(res, Math.max(i * (n - i), i * cuttingRope2(n - i)));

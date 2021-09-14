@@ -32,8 +32,10 @@ public class CatchTest {
     }
 
     public static void main(String[] args) {
-        CatchTest c = new CatchTest();
-        String invoke = c.invoke();
-        System.out.println(invoke);
+//        CatchTest c = new CatchTest();
+//        String invoke = c.invoke();
+//        System.out.println(invoke);
+        B b = new B();
+        B.BB bb = new B.BB();
     }
 }

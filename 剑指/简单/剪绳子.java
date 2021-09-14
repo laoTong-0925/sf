@@ -7,8 +7,8 @@ package sf.剑指.简单;
  */
 public class 剪绳子 {
     public static void main(String[] args) {
-        int i = cuttingRope(10);
-        System.out.println(i);
+        int i = cuttingRope(3);
+//        System.out.println(i);
         int i1 = cuttingRope2(3);
     }
 
@@ -17,12 +17,21 @@ public class 剪绳子 {
      */
     public static int cuttingRope(int n) {
         int[] dp = new int[n + 1];
-        for (int i = 2; i <= n; i++) {
+        for (int i = 2; i < n + 1; i++) {
             for (int j = 1; j < i; j++) {
                 dp[i] = Math.max(dp[i], Math.max(j * (i - j), j * dp[i - j]));
             }
         }
         return dp[n];
+//        int[] dp = new int[n + 1];
+//        dp[2] = 1;
+//        for (int i = 3; i < n + 1; i++) { // 第一段的长度
+//            for (int j = 2; j < i; j++) {
+//                dp[i] = Math.max(dp[i], Math.max(j * (i - j), j * dp[i - j]));
+//            }
+//        }
+//        return dp[n];
+
     }
 
     /**

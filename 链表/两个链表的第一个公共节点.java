@@ -3,7 +3,9 @@ package sf.链表;
 import sf.ListNode;
 
 /**
- * @Description : 双指针，两个链表都会走相同的路程，他们一定会相遇，在相交处或者最后一个，最后一个时 next都是0直接返回指针就好，null
+ * @Description : 双指针，两个链表都会走相同的路程，他们一定会相遇，在相交处或者最后一个，
+ * 最后一个时 next都是0直接返回指针就好，null
+ * 转角遇见爱
  * @Author :
  * @Date: 2020-12-10 10:03
  */

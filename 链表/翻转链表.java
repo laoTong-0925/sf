@@ -42,13 +42,14 @@ public class 翻转链表 {
         }
         return pre;
     }
+
     /**
      * 递归
-     *
      */
     public static ListNode reverseList1(ListNode head) {
         return recur(head, null);    // 调用递归并返回
     }
+
     private static ListNode recur(ListNode cur, ListNode pre) {
         if (cur == null) return pre; // 终止条件
         ListNode res = recur(cur.next, cur);  // 递归后继节点

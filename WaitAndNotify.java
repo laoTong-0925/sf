@@ -1,5 +1,9 @@
 package sf;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class WaitAndNotify {
     	//轮询标志位
     	private static boolean stop = false;
@@ -78,11 +82,23 @@ public class WaitAndNotify {
 	        }
 	    }
 	    public static void main(String[] args){
-	        Thread waitThread = new Thread(new WaitThread());
-	        waitThread.setName("waitThread");
-	        Thread notifyThread = new Thread(new NotifyThread());
-	        notifyThread.setName("notifyThread");
-	        waitThread.start();
-	        notifyThread.start();
-	    }
+//	        Thread waitThread = new Thread(new WaitThread());
+//	        waitThread.setName("waitThread");
+//	        Thread notifyThread = new Thread(new NotifyThread());
+//	        notifyThread.setName("notifyThread");
+//	        waitThread.start();
+//	        notifyThread.start();
+	        ThreadLocal<Integer> local = new ThreadLocal<>();
+			local.set(1);
+			Thread thread = new Thread(() -> {
+				local.set(2);
+				Integer integer = local.get();
+				System.out.println(integer);
+			});
+			thread.start();
+			Integer integer = local.get();
+			System.out.println(integer);
+			System.out.println();
+
+		}
 	}

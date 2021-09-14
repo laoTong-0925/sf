@@ -17,7 +17,7 @@ public class 最长不含重复字符子串Dp {
     }
 
     public int lengthOfLongestSubstring(String s) {
-        Map<Character, Integer> dic = new HashMap<>();
+        Map<Character, Integer> dic = new HashMap<>();//字符，索引
         int res = 0, tmp = 0; // tmp 存每次遍历的结果
         for (int j = 0; j < s.length(); j++) {
             int i = dic.getOrDefault(s.charAt(j), -1); // 获取索引 i

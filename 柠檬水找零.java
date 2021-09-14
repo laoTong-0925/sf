@@ -4,33 +4,20 @@ import java.io.File;
 
 /**
  * @Description : 只有5 10 20的面值 ，水卖5块，收10元时必须有5元，收20时有 10+5 或者 5+5+5
+ * 关键在于看付款的时候有没有钱找零，注意不同面值的找零组合
  * @Author :
  * @Date: 2020-12-10 09:31
  */
 public class 柠檬水找零 {
 
     public static void main(String[] args) {
-        try {
-            File file = new File("/data/log/cu-api");
-            if (file.exists()) {
-                File[] files = file.listFiles();
-                if (files != null) {
-                    for (File fileIn : files) {
-                        if (fileIn.isFile()) {
-                            String name = fileIn.getName();
-                            if (name.contains("500"))
-                                fileIn.delete();
-                        }
-                    }
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        int[] bills = {5,5,10,5};//付费顺序
+        boolean b = lemonadeChange(bills);
+        System.out.println(b);
     }
 
-    public boolean lemonadeChange(int[] bills) {
+
+    public static boolean lemonadeChange(int[] bills) {
         int five = 0, ten = 0;
         for (int bill : bills) {
             if (bill == 5) {

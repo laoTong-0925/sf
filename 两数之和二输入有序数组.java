@@ -17,7 +17,7 @@ public class 两数之和二输入有序数组 {
     }
 
     public static void main(String[] args) {
-        int[] a = new int[]{2, 3, 4};
+        int[] a = new int[]{2, 3, 4};// 9 5 8 1 3   8
         int[] ints = twoSum(a, 6);
         int[] ints2 = twoSum2(a, 6);
         for (Integer i : ints)
@@ -30,7 +30,7 @@ public class 两数之和二输入有序数组 {
     public static int[] twoSum(int[] numbers, int target) {
         if (numbers == null || numbers.length == 0)
             return null;
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();// 另一个家数，当前加数的位置
         for (int i = 0; i < numbers.length; i++) {
             if (map.containsKey(numbers[i])) {
                 int index = map.get(numbers[i]);

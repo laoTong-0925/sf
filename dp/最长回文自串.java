@@ -36,6 +36,7 @@ public class 最长回文自串 {
                     if (j - i < 3) {
                         dp[i][j] = true;
                     } else {
+                        // abbba 只有bbb是回文才行
                         dp[i][j] = dp[i + 1][j - 1];
                     }
                 }

@@ -11,6 +11,9 @@ import java.util.Map;
  * @Date: 2021-11-28 21:13
  */
 public class 子域名访问技术 {
+    public static void main(String[] args) {
+
+    }
 
     public static List<String> subdomainVisits(String[] cpdomains) {
         List<String> ansList = new ArrayList<>();

@@ -16,6 +16,7 @@ import java.util.Map;
  * 输入：nums = [1,1,2,1,1], k = 3
  * 输出：2
  * 解释：包含 3 个奇数的子数组是 [1,1,2,1] 和 [1,2,1,1] 。
+ * 包含 4 也是包含 3吗
  * @Author :
  * @Date: 2021-11-25 18:38
  */
@@ -37,21 +38,21 @@ public class 统计优美子数组 {
         }
 
         int ans = 0;
-//        Map<Integer, Integer> map = new HashMap<>();
-//        for (int i = 0; i < s.length; i++) {
-//            if (s[i] - k >= 0) {
-//                ans = ans + map.get(s[i] - k);
-//            }
-//            map.put(s[i], map.getOrDefault(s[i], 0) + 1);
-//        }
-        int[] count = new int[nums.length + 1];
-        count[s[0]]++;
-        for (int i = 1; i <= nums.length; i++) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length; i++) {
             if (s[i] - k >= 0) {
-                ans = ans + count[s[i] - k];
+                ans = ans + map.get(s[i] - k);
             }
-            count[s[i]]++;
+            map.put(s[i], map.getOrDefault(s[i], 0) + 1);
         }
+//        int[] count = new int[nums.length + 1];
+//        count[s[0]]++;
+//        for (int i = 1; i <= nums.length; i++) {
+//            if (s[i] - k >= 0) {
+//                ans = ans + count[s[i] - k];
+//            }
+//            count[s[i]]++;
+//        }
         return ans;
     }
 

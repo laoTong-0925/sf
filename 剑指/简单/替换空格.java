@@ -1,6 +1,5 @@
 package sf.剑指.简单;
 
-import com.sun.tools.javac.util.StringUtils;
 
 /**
  * @Description :
@@ -9,7 +8,8 @@ import com.sun.tools.javac.util.StringUtils;
  */
 public class 替换空格 {
     public static void main(String[] args) {
-        String s = "   ";
+        String s = "123456";
+
         StringBuilder res = new StringBuilder();
         for(Character c : s.toCharArray())
         {
@@ -18,4 +18,7 @@ public class 替换空格 {
         }
         System.out.println(res.toString());
     }
+
+
+
 }

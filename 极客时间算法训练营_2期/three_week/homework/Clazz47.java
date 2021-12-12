@@ -1,4 +1,4 @@
-package sf.极客时间算法训练营_2期.three_week;
+package sf.极客时间算法训练营_2期.three_week.homework;
 
 import java.util.*;
 

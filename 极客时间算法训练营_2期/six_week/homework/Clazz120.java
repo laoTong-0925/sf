@@ -1,4 +1,4 @@
-package sf;
+package sf.极客时间算法训练营_2期.six_week.homework;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,9 +7,8 @@ import java.util.List;
  * @ClassName : 三角形最短路径和
  * @Description :
  * @Author :
- * @Date: 2020-07-15 10:28
  */
-public class 三角形最短路径和 {
+public class Clazz120 {
 
     public static void main(String[] args) {
         List<List<Integer>> list = new ArrayList<>();
@@ -36,7 +35,7 @@ public class 三角形最短路径和 {
         list.add(list4);
 
 
-        int i = minimumTotal(list);
+        int i = minimumTotal1(list);
         System.out.println(i);
 
     }
@@ -60,15 +59,15 @@ public class 三角形最短路径和 {
 
     public static int minimumTotal1(List<List<Integer>> triangle) {//ac
         int row = triangle.size();
-        int[] minlen = new int[row + 1];
+        int[] dp = new int[row + 1];
         for (int level = row - 1; level >= 0; level--) {
             for (int i = 0; i <= level; i++) {   //第i行有i+1个数字
-                int min = Math.min(minlen[i], minlen[i + 1]);
+                int min = Math.min(dp[i], dp[i + 1]);
                 int t = triangle.get(level).get(i);
-                minlen[i] = min + t;
+                dp[i] = min + t;
             }
         }
-        return minlen[0];
+        return dp[0];
     }
 
 }
